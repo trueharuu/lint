@@ -1,0 +1,8 @@
+restriction
+    [x] any
+style
+    [x] non_ascii_ident
+suspicious
+    [x] non_bool_condition
+    [x] useless_null_assert
+    [x] object_eq

@@ -1,0 +1,22 @@
+{
+  "name": "lint",
+  "version": "1.0.0",
+  "description": "The prettiest linter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "byots": "^5.0.0-dev.20221103.1.34",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "eslint": "^8.53.0",
+    "prettier": "^3.0.3",
+    "prettier-eslint": "^16.1.2"
+  }
+}
