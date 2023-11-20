@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import * as util from 'node:util';
 import ts, { Node, SourceFile } from 'byots';
 
-writeFileSync('./dbg.txt', '');
+writeFileSync('./dbg.ansi', '');
 export function dbg<T>(x: T): T {
   if (typeof x === 'object' && !Array.isArray(x)) {
     x = Object.assign({}, x);
@@ -25,8 +25,8 @@ export function dbg<T>(x: T): T {
   );
 
   writeFileSync(
-    './dbg.txt',
-    (readFileSync('./dbg.txt') + '\n' + t).trimStart(),
+    './dbg.ansi',
+    (readFileSync('./dbg.ansi') + '\n' + t).trimStart(),
   );
   //   console.log(t);
   return x;
@@ -41,8 +41,8 @@ export function print_node(
   ast: ts.SourceFile,
   d: number = 0,
   i: number = 0,
-) {
-  dbg(
+): string {
+  return (
     `${'  '.repeat(d)}${color(i, 30)} ${formatSyntaxKind(node.kind)}[${color(
       `${node.pos}..${node.end}`,
       33,
@@ -51,14 +51,12 @@ export function print_node(
         ? '...'
         : node.getText(ast).trim(),
       30,
-    )} ${color(`[${node.kind}]`, '2;31')}`,
+    )} ${color(`[${node.kind}]`, '2;31')}\n` +
+    node
+      .getChildren(ast)
+      .map((c, i) => print_node(c, ast, d + 1, i))
+      .join('')
   );
-
-  node.getChildren(ast).forEach((c, i) => print_node(c, ast, d + 1, i));
-
-  if (d === 0) {
-    dbg('');
-  }
 }
 
 export function map_with_spans(
@@ -78,12 +76,14 @@ export function map_with_spans(
     .join('');
 }
 
-export function collect_children(t: Node): Array<Node> {
+export function collect_children(t: Node, parent?: Node): Array<Node> {
+  // @ts-expect-error shut up
+  t.parent ||= parent;
   return [
     t,
     ...t
       .getChildren()
-      .map((x) => collect_children(x))
+      .map((x) => collect_children(x, t || parent))
       .flat(),
   ];
 }
@@ -492,22 +492,4 @@ export const SyntaxKinds = [
 
 export function formatSyntaxKind(t: ts.SyntaxKind) {
   return SyntaxKinds.find((x) => x[0] == t)?.[1];
-}
-
-export function type_is_any(ty: ts.Type): boolean {
-  return is_type_flag_set(ty, ts.TypeFlags.Any);
-}
-
-export function is_type_flag_set(
-  ty: ts.Type,
-  flags: ts.TypeFlags,
-  recv?: boolean,
-): boolean {
-  const f = ty.getFlags();
-
-  if (recv && f & (ts.TypeFlags.Any | ts.TypeFlags.Unknown)) {
-    return true;
-  }
-
-  return (f & flags) !== 0;
 }

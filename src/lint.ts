@@ -67,12 +67,15 @@ export abstract class Lint {
     return null;
   }
 
-  public suggestion(_: ts.Node): string | null {
-    return null;
+  public current_fixes: Array<[string | null, ts.Node | string]> = [];
+  public fix(...v: [string | null, ts.Node | string]): this {
+    // console.log(v);
+    this.current_fixes.push(v);
+    return this;
   }
 
-  public fix(_: ts.Node): ts.Node | null {
-    return null;
+  public fixes(t: ts.Node) {
+    void t;
   }
 
   public children(ast?: ts.Node): Array<ts.Node> {
@@ -81,6 +84,28 @@ export abstract class Lint {
 
   public typeck() {
     return this.program.getTypeChecker();
+  }
+
+  public ty_of(t: ts.Node) {
+    return this.typeck().getTypeAtLocation(t);
+  }
+
+  public has_ty_flag(ty: ts.Type, flags: ts.TypeFlags, recv?: boolean) {
+    const f = ty.getFlags();
+
+    if (recv && f & (ts.TypeFlags.Any | ts.TypeFlags.Unknown)) {
+      return true;
+    }
+
+    return (f & flags) !== 0;
+  }
+
+  public get type_to_string() {
+    return this.typeck().typeToString;
+  }
+
+  public factory() {
+    return this.ts.factory;
   }
 
   public print(node: ts.Node) {

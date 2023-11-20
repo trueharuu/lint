@@ -9,7 +9,7 @@ export function fmt(program: ts.Program, ast: ts.SourceFile) {
   dbg(color(`[${file}]`, 35));
   //   dbg(color(text, 30));
 
-  print_node(ast, ast);
+  dbg(print_node(ast, ast));
 
   let diagnostic_ctr = 0;
   for (const ctr of lints) {
@@ -34,16 +34,24 @@ export function fmt(program: ts.Program, ast: ts.SourceFile) {
       );
 
       dbg(
-        map_with_spans(
-          text,
-          // @ts-ignore
-          [
-            ...output.map((x) => [x.pos, x.end, false]),
-            ...skips.map((x) => [x.pos, x.end, true]),
-          ],
-          // @ts-ignore
-          (x, [_, __, s]) => color(x, s ? '38;5;120' : '38;5;199'),
-        ),
+        '\n' +
+          color(
+            map_with_spans(
+              text,
+              // @ts-ignore
+              [
+                ...output.map((x) => [x.pos, x.end, false]),
+                ...skips.map((x) => [x.pos, x.end, true]),
+              ],
+              // @ts-ignore
+              (x, [_, __, s]) => color(x, s ? '0;33' : '0;31', 2),
+            ),
+            2,
+          )
+            .split('\n')
+            .map((x) => '\t' + x)
+            .join('\n')
+            .trimEnd(),
       );
 
       const note = lint.note();
@@ -52,24 +60,50 @@ export function fmt(program: ts.Program, ast: ts.SourceFile) {
       }
 
       for (const part of output) {
-        const suggestion = lint.suggestion(part);
-        if (suggestion !== null) {
-          dbg(`= ${color('help:', '1;33')} ${suggestion}`);
-        }
+        // //   dbg(part.getText());
+        // const fix = lint.fix(part);
 
-        //   dbg(part.getText());
-        const fix = lint.fix(part);
+        // if (fix !== null) {
+        //   const suggestion = lint.suggestion(part);
 
-        if (fix !== null) {
+        //   dbg(`= ${color('help:', '1;33')} ${suggestion || 'apply some fix'}`);
+        //   dbg(
+        //     (
+        //       text.slice(0, part.pos) +
+        //       ' ' +
+        //       color(print(part, ast), '31;11', '2') +
+        //       color(print(fix, ast), '32', '2') +
+        //       text.slice(part.end)
+        //     )
+        //       .trimEnd()
+        //       .split('\n')
+        //       .map((x) => '|\t' + color(x, '2'))
+        //       .join('') + '\n',
+        //   );
+        // }
+        lint.current_fixes = [];
+        lint.fixes(part);
+        for (const [suggestion, fix] of lint.current_fixes) {
+          const t = typeof fix === 'string' ? fix : print(fix, ast);
+          dbg(`= ${color('help:', '1;33')} ${suggestion || 'apply some fix'}`);
           dbg(
-            `= ${color('fix:', '1;36')}\n` +
-              text.slice(0, part.pos) +
-              color(print(fix, ast), '32') +
-              text.slice(part.end),
+            '\n' +
+              (
+                color(text.slice(0, part.pos), 2) +
+                ' ' +
+                (t.trim().length === 0
+                  ? color(print(part, ast), '0;31;3', '2')
+                  : '') +
+                color(t, '0;32', 2) +
+                color(text.slice(part.end), 2)
+              )
+                .split('\n')
+                .map((x) => '\t' + x)
+                .join('\n')
+                .trimEnd(),
           );
         }
       }
-      dbg('');
     }
   }
 }

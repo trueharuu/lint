@@ -1,0 +1,754 @@
+[35m[src/tests/any.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..38[0m[0m] [30mconst u: any = Number.parseInt('0');[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..36[0m[0m] [30mconst u: any = Number.parseInt('0');[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..36[0m[0m] [30mconst u: any = Number.parseInt('0');[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..35[0m[0m] [30mconst u: any = Number.parseInt('0')[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..35[0m[0m] [30mu: any = Number.parseInt('0')[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..35[0m[0m] [30mu: any = Number.parseInt('0')[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30mu[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m ColonToken[[33m7..8[0m[0m] [30m:[0m[0m [2;31m[59][0m[0m
+            [30m2[0m[0m AnyKeyword[[33m8..12[0m[0m] [30many[0m[0m [2;31m[133][0m[0m
+            [30m3[0m[0m EqualsToken[[33m12..14[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m4[0m[0m CallExpression[[33m14..35[0m[0m] [30mNumber.parseInt('0')[0m[0m [2;31m[213][0m[0m
+              [30m0[0m[0m PropertyAccessExpression[[33m14..30[0m[0m] [30mNumber.parseInt[0m[0m [2;31m[211][0m[0m
+                [30m0[0m[0m Identifier[[33m14..21[0m[0m] [30mNumber[0m[0m [2;31m[80][0m[0m
+                [30m1[0m[0m DotToken[[33m21..22[0m[0m] [30m.[0m[0m [2;31m[25][0m[0m
+                [30m2[0m[0m Identifier[[33m22..30[0m[0m] [30mparseInt[0m[0m [2;31m[80][0m[0m
+              [30m1[0m[0m OpenParenToken[[33m30..31[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+              [30m2[0m[0m SyntaxList[[33m31..34[0m[0m] [30m'0'[0m[0m [2;31m[358][0m[0m
+                [30m0[0m[0m StringLiteral[[33m31..34[0m[0m] [30m'0'[0m[0m [2;31m[11][0m[0m
+              [30m3[0m[0m CloseParenToken[[33m34..35[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m35..36[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m36..38[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/any.ts::001][0m[0m Lint [31m#[deny(restriction::any)][0m[0m triggered at [34m[8..12][0m[0m:
+[30;3mChecks for the use of the type `any`.[0m[0m
+
+	[2mconst u:[0;31m any[0m[2m = Number.parseInt('0');
+	[0m[0m
+= [1;33mhelp:[0m[0m if applicable, use the inferred type [34m`number`[0m[0m
+
+	[2mconst u:[0m[0m [0;32mnumber[0m[2m[2m = Number.parseInt('0');
+	[0m[0m
+= [1;33mhelp:[0m[0m if applicable, use [34m`unknown`[0m[0m
+
+	[2mconst u:[0m[0m [0;32munknown[0m[2m[2m = Number.parseInt('0');
+	[0m[0m
+= [1;33mhelp:[0m[0m if applicable, use [34m`never`[0m[0m
+
+	[2mconst u:[0m[0m [0;32mnever[0m[2m[2m = Number.parseInt('0');
+	[0m[0m
+[35m[src/tests/boxed_types.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..48[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..46[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..24[0m[0m] [30mconst i: String = 'abc';[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..23[0m[0m] [30mconst i: String = 'abc'[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..23[0m[0m] [30mi: String = 'abc'[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..23[0m[0m] [30mi: String = 'abc'[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30mi[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m ColonToken[[33m7..8[0m[0m] [30m:[0m[0m [2;31m[59][0m[0m
+            [30m2[0m[0m TypeReference[[33m8..15[0m[0m] [30mString[0m[0m [2;31m[183][0m[0m
+              [30m0[0m[0m Identifier[[33m8..15[0m[0m] [30mString[0m[0m [2;31m[80][0m[0m
+            [30m3[0m[0m EqualsToken[[33m15..17[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m4[0m[0m StringLiteral[[33m17..23[0m[0m] [30m'abc'[0m[0m [2;31m[11][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m23..24[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+    [30m1[0m[0m VariableStatement[[33m24..46[0m[0m] [30mconst y: Number = 1;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m24..45[0m[0m] [30mconst y: Number = 1[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m24..31[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m31..45[0m[0m] [30my: Number = 1[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m31..45[0m[0m] [30my: Number = 1[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m31..33[0m[0m] [30my[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m ColonToken[[33m33..34[0m[0m] [30m:[0m[0m [2;31m[59][0m[0m
+            [30m2[0m[0m TypeReference[[33m34..41[0m[0m] [30mNumber[0m[0m [2;31m[183][0m[0m
+              [30m0[0m[0m Identifier[[33m34..41[0m[0m] [30mNumber[0m[0m [2;31m[80][0m[0m
+            [30m3[0m[0m EqualsToken[[33m41..43[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m4[0m[0m NumericLiteral[[33m43..45[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m45..46[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m46..48[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/boxed_types.ts::001][0m[0m Lint [33m#[warn(suspicious::boxed_types)][0m[0m triggered at [34m[8..15][0m[0m, [34m[34..41][0m[0m:
+[30;3mChecks for the use of boxed types such as `String` or `Boolean`.[0m[0m
+
+	[2mconst i:[0;31m String[0m[2m = 'abc';
+	const y:[0;31m Number[0m[2m = 1;
+	[0m[0m
+= [1;33mhelp:[0m[0m use the primitive type [34m`string`[0m[0m instead
+
+	[2mconst i:[0m[0m [0;32mstring[0m[2m[2m = 'abc';
+	const y: Number = 1;
+	[0m[0m
+= [1;33mhelp:[0m[0m use the primitive type [34m`number`[0m[0m instead
+
+	[2mconst i: String = 'abc';
+	const y:[0m[0m [0;32mnumber[0m[2m[2m = 1;
+	[0m[0m
+[35m[src/tests/double_parens.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..16[0m[0m] [30mconst _ = ((1));[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..16[0m[0m] [30mconst _ = ((1));[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..16[0m[0m] [30mconst _ = ((1));[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..15[0m[0m] [30mconst _ = ((1))[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..15[0m[0m] [30m_ = ((1))[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..15[0m[0m] [30m_ = ((1))[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30m_[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m EqualsToken[[33m7..9[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m2[0m[0m ParenthesizedExpression[[33m9..15[0m[0m] [30m((1))[0m[0m [2;31m[217][0m[0m
+              [30m0[0m[0m OpenParenToken[[33m9..11[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+              [30m1[0m[0m ParenthesizedExpression[[33m11..14[0m[0m] [30m(1)[0m[0m [2;31m[217][0m[0m
+                [30m0[0m[0m OpenParenToken[[33m11..12[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+                [30m1[0m[0m NumericLiteral[[33m12..13[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+                [30m2[0m[0m CloseParenToken[[33m13..14[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+              [30m2[0m[0m CloseParenToken[[33m14..15[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m15..16[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m16..16[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/double_parens.ts::001][0m[0m Lint [33m#[warn(complexity::double_parens)][0m[0m triggered at [34m[9..15][0m[0m:
+[30;3mChecks for unnecessary double parentheses.[0m[0m
+
+	[2mconst _ =[0;31m ((1))[0m[2m[0;33m[0m[2m;[0m[0m
+= [1;33mhelp:[0m[0m remove the extra parentheses
+
+	[2mconst _ =[0m[0m [0;32m(1)[0m[2m[2m;[0m[0m
+[35m[src/tests/else_then_if.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..50[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..48[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m IfStatement[[33m0..48[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m0..2[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m2..4[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m4..10[0m[0m] [30m1 == 1[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m4..5[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m EqualsEqualsToken[[33m5..8[0m[0m] [30m==[0m[0m [2;31m[35][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m8..10[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m10..11[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m11..16[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m11..13[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m13..13[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m13..16[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+      [30m5[0m[0m ElseKeyword[[33m16..21[0m[0m] [30melse[0m[0m [2;31m[93][0m[0m
+      [30m6[0m[0m Block[[33m21..48[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m21..23[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m23..45[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m IfStatement[[33m23..45[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+            [30m0[0m[0m IfKeyword[[33m23..29[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+            [30m1[0m[0m OpenParenToken[[33m29..31[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+            [30m2[0m[0m BinaryExpression[[33m31..37[0m[0m] [30m2 == 2[0m[0m [2;31m[226][0m[0m
+              [30m0[0m[0m NumericLiteral[[33m31..32[0m[0m] [30m2[0m[0m [2;31m[9][0m[0m
+              [30m1[0m[0m EqualsEqualsToken[[33m32..35[0m[0m] [30m==[0m[0m [2;31m[35][0m[0m
+              [30m2[0m[0m NumericLiteral[[33m35..37[0m[0m] [30m2[0m[0m [2;31m[9][0m[0m
+            [30m3[0m[0m CloseParenToken[[33m37..38[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+            [30m4[0m[0m Block[[33m38..45[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+              [30m0[0m[0m OpenBraceToken[[33m38..40[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+              [30m1[0m[0m SyntaxList[[33m40..40[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+              [30m2[0m[0m CloseBraceToken[[33m40..45[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m45..48[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m48..50[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/else_then_if.ts::001][0m[0m Lint [32m#[allow(pedantic::empty_blocks)][0m[0m triggered at [34m[11..16][0m[0m, [34m[38..45][0m[0m:
+[30;3mChecks for empty blocks.[0m[0m
+
+	[2mif (1 == 1)[0;31m {
+	}[0m[2m else[0;33m {
+	  if (2 == 2)[0;31m {
+	  }[0m[2m
+	}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 == 1)[0m[0m [0;32m;[0m[2m[2m else {
+	  if (2 == 2) {
+	  }
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 == 1) {
+	} else {
+	  if (2 == 2)[0m[0m [0;32m;[0m[2m[2m
+	}
+	[0m[0m
+[35;2m[src/tests/else_then_if.ts::002][0m[0m Lint [33m#[warn(style::else_then_if)][0m[0m triggered at [34m[21..48][0m[0m:
+[30;3mChecks lone `if` statements inside of `else` statements.[0m[0m
+
+	[2mif (1 == 1) {
+	} else[0;31m {
+	  if (2 == 2) {
+	  }
+	}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 == 1) {
+	} else[0m[0m [0;32mif (2 == 2) {
+	}[0m[2m[2m
+	[0m[0m
+[35;2m[src/tests/else_then_if.ts::003][0m[0m Lint [31m#[deny(correctness::non_strict_eq)][0m[0m triggered at [34m[5..8][0m[0m, [34m[32..35][0m[0m:
+[30;3mChecks for non-strict equality comparisons using `==` or `!=`.[0m[0m
+
+	[2mif (1[0;31m ==[0m[2m 1) {
+	} else {
+	  if (2[0;31m ==[0m[2m 2) {
+	  }
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`===`[0m[0m comparison instead
+
+	[2mif (1[0m[0m [0;32m===[0m[2m[2m 1) {
+	} else {
+	  if (2 == 2) {
+	  }
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`===`[0m[0m comparison instead
+
+	[2mif (1 == 1) {
+	} else {
+	  if (2[0m[0m [0;32m===[0m[2m[2m 2) {
+	  }
+	}
+	[0m[0m
+[35m[src/tests/empty_block.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..6[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..4[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m Block[[33m0..4[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+      [30m0[0m[0m OpenBraceToken[[33m0..1[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+      [30m1[0m[0m SyntaxList[[33m1..1[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+      [30m2[0m[0m CloseBraceToken[[33m1..4[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m4..6[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/empty_block.ts::001][0m[0m Lint [32m#[allow(pedantic::empty_blocks)][0m[0m triggered at [34m[0..4][0m[0m:
+[30;3mChecks for empty blocks.[0m[0m
+
+	[2m[0;31m{
+	}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2m[0m[0m [0;32m;[0m[2m[2m
+	[0m[0m
+[35m[src/tests/empty_enum.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..18[0m[0m] [30mexport enum I {}[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..16[0m[0m] [30mexport enum I {}[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m EnumDeclaration[[33m0..16[0m[0m] [30mexport enum I {}[0m[0m [2;31m[266][0m[0m
+      [30m0[0m[0m SyntaxList[[33m0..6[0m[0m] [30mexport[0m[0m [2;31m[358][0m[0m
+        [30m0[0m[0m ExportKeyword[[33m0..6[0m[0m] [30mexport[0m[0m [2;31m[95][0m[0m
+      [30m1[0m[0m EnumKeyword[[33m6..11[0m[0m] [30menum[0m[0m [2;31m[94][0m[0m
+      [30m2[0m[0m Identifier[[33m11..13[0m[0m] [30mI[0m[0m [2;31m[80][0m[0m
+      [30m3[0m[0m OpenBraceToken[[33m13..15[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+      [30m4[0m[0m SyntaxList[[33m15..15[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+      [30m5[0m[0m CloseBraceToken[[33m15..16[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m16..18[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/empty_enum.ts::001][0m[0m Lint [32m#[allow(pedantic::empty_enum)][0m[0m triggered at [34m[0..16][0m[0m:
+[30;3mChecks for `enum`s with no variants.[0m[0m
+
+	[2m[0;31mexport enum I {}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`never`[0m[0m type instead
+
+	[2m[0m[0m [0;32mexport type I = never;[0m[2m[2m
+	[0m[0m
+[35m[src/tests/eval.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..16[0m[0m] [30meval('1 + 1');[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..14[0m[0m] [30meval('1 + 1');[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m ExpressionStatement[[33m0..14[0m[0m] [30meval('1 + 1');[0m[0m [2;31m[244][0m[0m
+      [30m0[0m[0m CallExpression[[33m0..13[0m[0m] [30meval('1 + 1')[0m[0m [2;31m[213][0m[0m
+        [30m0[0m[0m Identifier[[33m0..4[0m[0m] [30meval[0m[0m [2;31m[80][0m[0m
+        [30m1[0m[0m OpenParenToken[[33m4..5[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+        [30m2[0m[0m SyntaxList[[33m5..12[0m[0m] [30m'1 + 1'[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m StringLiteral[[33m5..12[0m[0m] [30m'1 + 1'[0m[0m [2;31m[11][0m[0m
+        [30m3[0m[0m CloseParenToken[[33m12..13[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m13..14[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m14..16[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/eval.ts::001][0m[0m Lint [31m#[deny(restriction::eval)][0m[0m triggered at [34m[0..13][0m[0m:
+[30;3mChecks for the use of `eval`.[0m[0m
+
+	[2m[0;31meval('1 + 1')[0m[2m;
+	[0m[0m
+= [1;33mhelp:[0m[0m use the passed expression instead
+
+	[2m[0m[0m [0;32m1 + 1[0m[2m[2m;
+	[0m[0m
+[35m[src/tests/imprecise_float.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..31[0m[0m] [30mconst f = 239084721903487234;[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..29[0m[0m] [30mconst f = 239084721903487234;[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..29[0m[0m] [30mconst f = 239084721903487234;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..28[0m[0m] [30mconst f = 239084721903487234[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..28[0m[0m] [30mf = 239084721903487234[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..28[0m[0m] [30mf = 239084721903487234[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30mf[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m EqualsToken[[33m7..9[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m2[0m[0m NumericLiteral[[33m9..28[0m[0m] [30m239084721903487234[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m28..29[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m29..31[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/imprecise_float.ts::001][0m[0m Lint [31m#[deny(correctness::imprecise_float)][0m[0m triggered at [34m[9..28][0m[0m:
+[30;3mChecks floating-point literals that would lose precision[0m[0m
+
+	[2mconst f =[0;31m 239084721903487234[0m[2m;
+	[0m[0m
+= [1;33mhelp:[0m[0m if the value is an integer, consider using a bigint
+
+	[2mconst f =[0m[0m [0;32m239084721903487230n[0m[2m[2m;
+	[0m[0m
+[35m[src/tests/non_ascii_ident.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..24[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..22[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..10[0m[0m] [30mlet ȹ = 1;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..9[0m[0m] [30mlet ȹ = 1[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m LetKeyword[[33m0..3[0m[0m] [30mlet[0m[0m [2;31m[121][0m[0m
+        [30m1[0m[0m SyntaxList[[33m3..9[0m[0m] [30mȹ = 1[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m3..9[0m[0m] [30mȹ = 1[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m3..5[0m[0m] [30mȹ[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m EqualsToken[[33m5..7[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m2[0m[0m NumericLiteral[[33m7..9[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m9..10[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+    [30m1[0m[0m VariableStatement[[33m10..22[0m[0m] [30mlet d = 1;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m10..21[0m[0m] [30mlet d = 1[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m LetKeyword[[33m10..15[0m[0m] [30mlet[0m[0m [2;31m[121][0m[0m
+        [30m1[0m[0m SyntaxList[[33m15..21[0m[0m] [30md = 1[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m15..21[0m[0m] [30md = 1[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m15..17[0m[0m] [30md[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m EqualsToken[[33m17..19[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m2[0m[0m NumericLiteral[[33m19..21[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m21..22[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m22..24[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/non_ascii_ident.ts::001][0m[0m Lint [33m#[warn(restriction::non_ascii_ident)][0m[0m triggered at [34m[3..5][0m[0m:
+[30;3mChecks for variables that use non-ASCII characters.[0m[0m
+
+	[2mlet[0;31m ȹ[0m[2m = 1;
+	let[0;33m d[0m[2m = 1;
+	[0m[0m
+= [1;33mhelp:[0m[0m use it's escaped variant [34m`\u0239`[0m[0m instead
+
+	[2mlet[0m[0m [0;32m\u0239[0m[2m[2m = 1;
+	let d = 1;
+	[0m[0m
+[35m[src/tests/non_bool_condition.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..38[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..36[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m IfStatement[[33m0..17[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m0..2[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m2..4[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m4..11[0m[0m] [30m1 === 1[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m4..5[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m EqualsEqualsEqualsToken[[33m5..9[0m[0m] [30m===[0m[0m [2;31m[37][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m9..11[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m11..12[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m12..17[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m12..14[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m14..14[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m14..17[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+    [30m1[0m[0m IfStatement[[33m17..36[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m17..23[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m23..25[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m25..30[0m[0m] [30m1 + 1[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m25..26[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m PlusToken[[33m26..28[0m[0m] [30m+[0m[0m [2;31m[40][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m28..30[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m30..31[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m31..36[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m31..33[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m33..33[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m33..36[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m36..38[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/non_bool_condition.ts::001][0m[0m Lint [33m#[warn(suspicious::non_bool_condition)][0m[0m triggered at [34m[25..30][0m[0m:
+[30;3mChecks conditions that are not explicitly a boolean.[0m[0m
+
+	[2mif ([0;33m1 === 1[0m[2m) {
+	}
+	
+	if ([0;31m1 + 1[0m[2m) {
+	}
+	[0m[0m
+[35;2m[src/tests/non_bool_condition.ts::002][0m[0m Lint [32m#[allow(pedantic::empty_blocks)][0m[0m triggered at [34m[12..17][0m[0m, [34m[31..36][0m[0m:
+[30;3mChecks for empty blocks.[0m[0m
+
+	[2mif (1 === 1)[0;31m {
+	}[0m[2m
+	
+	if (1 + 1)[0;31m {
+	}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 === 1)[0m[0m [0;32m;[0m[2m[2m
+	
+	if (1 + 1) {
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 === 1) {
+	}
+	
+	if (1 + 1)[0m[0m [0;32m;[0m[2m[2m
+	[0m[0m
+[35m[src/tests/non_strict_eq.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..37[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..35[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m IfStatement[[33m0..16[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m0..2[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m2..4[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m4..10[0m[0m] [30m1 == 1[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m4..5[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m EqualsEqualsToken[[33m5..8[0m[0m] [30m==[0m[0m [2;31m[35][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m8..10[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m10..11[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m11..16[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m11..13[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m13..13[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m13..16[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+    [30m1[0m[0m IfStatement[[33m16..35[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m16..20[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m20..22[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m22..29[0m[0m] [30m1 === 1[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m22..23[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m EqualsEqualsEqualsToken[[33m23..27[0m[0m] [30m===[0m[0m [2;31m[37][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m27..29[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m29..30[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m30..35[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m30..32[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m32..32[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m32..35[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m35..37[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/non_strict_eq.ts::001][0m[0m Lint [32m#[allow(pedantic::empty_blocks)][0m[0m triggered at [34m[11..16][0m[0m, [34m[30..35][0m[0m:
+[30;3mChecks for empty blocks.[0m[0m
+
+	[2mif (1 == 1)[0;31m {
+	}[0m[2m
+	if (1 === 1)[0;31m {
+	}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 == 1)[0m[0m [0;32m;[0m[2m[2m
+	if (1 === 1) {
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (1 == 1) {
+	}
+	if (1 === 1)[0m[0m [0;32m;[0m[2m[2m
+	[0m[0m
+[35;2m[src/tests/non_strict_eq.ts::002][0m[0m Lint [31m#[deny(correctness::non_strict_eq)][0m[0m triggered at [34m[5..8][0m[0m:
+[30;3mChecks for non-strict equality comparisons using `==` or `!=`.[0m[0m
+
+	[2mif (1[0;31m ==[0m[2m 1) {
+	}
+	if (1[0;33m ===[0m[2m 1) {
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`===`[0m[0m comparison instead
+
+	[2mif (1[0m[0m [0;32m===[0m[2m[2m 1) {
+	}
+	if (1 === 1) {
+	}
+	[0m[0m
+[35m[src/tests/no_unsafe_neg.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..11[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..9[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m ExpressionStatement[[33m0..4[0m[0m] [30m-'';[0m[0m [2;31m[244][0m[0m
+      [30m0[0m[0m PrefixUnaryExpression[[33m0..3[0m[0m] [30m-''[0m[0m [2;31m[224][0m[0m
+        [30m0[0m[0m MinusToken[[33m0..1[0m[0m] [30m-[0m[0m [2;31m[41][0m[0m
+        [30m1[0m[0m StringLiteral[[33m1..3[0m[0m] [30m''[0m[0m [2;31m[11][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m3..4[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+    [30m1[0m[0m ExpressionStatement[[33m4..9[0m[0m] [30m-1;[0m[0m [2;31m[244][0m[0m
+      [30m0[0m[0m PrefixUnaryExpression[[33m4..8[0m[0m] [30m-1[0m[0m [2;31m[224][0m[0m
+        [30m0[0m[0m MinusToken[[33m4..7[0m[0m] [30m-[0m[0m [2;31m[41][0m[0m
+        [30m1[0m[0m NumericLiteral[[33m7..8[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m8..9[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m9..11[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/no_unsafe_neg.ts::001][0m[0m Lint [33m#[warn(correctness::no_unsafe_neg)][0m[0m triggered at [34m[0..3][0m[0m:
+[30;3m[0m[0m
+
+	[2m[0;31m-''[0m[2m;[0;33m
+	-1[0m[2m;
+	[0m[0m
+[35m[src/tests/object_eq.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..56[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..54[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m IfStatement[[33m0..34[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m0..2[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m2..4[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m4..28[0m[0m] [30mnew Date() == new Date()[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NewExpression[[33m4..14[0m[0m] [30mnew Date()[0m[0m [2;31m[214][0m[0m
+          [30m0[0m[0m NewKeyword[[33m4..7[0m[0m] [30mnew[0m[0m [2;31m[105][0m[0m
+          [30m1[0m[0m Identifier[[33m7..12[0m[0m] [30mDate[0m[0m [2;31m[80][0m[0m
+          [30m2[0m[0m OpenParenToken[[33m12..13[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+          [30m3[0m[0m SyntaxList[[33m13..13[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+          [30m4[0m[0m CloseParenToken[[33m13..14[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+        [30m1[0m[0m EqualsEqualsToken[[33m14..17[0m[0m] [30m==[0m[0m [2;31m[35][0m[0m
+        [30m2[0m[0m NewExpression[[33m17..28[0m[0m] [30mnew Date()[0m[0m [2;31m[214][0m[0m
+          [30m0[0m[0m NewKeyword[[33m17..21[0m[0m] [30mnew[0m[0m [2;31m[105][0m[0m
+          [30m1[0m[0m Identifier[[33m21..26[0m[0m] [30mDate[0m[0m [2;31m[80][0m[0m
+          [30m2[0m[0m OpenParenToken[[33m26..27[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+          [30m3[0m[0m SyntaxList[[33m27..27[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+          [30m4[0m[0m CloseParenToken[[33m27..28[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m28..29[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m29..34[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m29..31[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m31..31[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m31..34[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+    [30m1[0m[0m IfStatement[[33m34..54[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m34..40[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m40..42[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m42..48[0m[0m] [30m0 == 0[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m42..43[0m[0m] [30m0[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m EqualsEqualsToken[[33m43..46[0m[0m] [30m==[0m[0m [2;31m[35][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m46..48[0m[0m] [30m0[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m48..49[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m49..54[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m49..51[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m51..51[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m51..54[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m54..56[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/object_eq.ts::001][0m[0m Lint [31m#[deny(suspicious::object_eq)][0m[0m triggered at [34m[4..28][0m[0m:
+[30;3mChecks for comparisons between `object` types.[0m[0m
+
+	[2mif ([0;31mnew Date() == new Date()[0m[2m) {
+	}
+	
+	if ([0;33m0 == 0[0m[2m) {
+	}
+	[0m[0m
+[35;2m[src/tests/object_eq.ts::002][0m[0m Lint [32m#[allow(pedantic::empty_blocks)][0m[0m triggered at [34m[29..34][0m[0m, [34m[49..54][0m[0m:
+[30;3mChecks for empty blocks.[0m[0m
+
+	[2mif (new Date() == new Date())[0;31m {
+	}[0m[2m
+	
+	if (0 == 0)[0;31m {
+	}[0m[2m
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (new Date() == new Date())[0m[0m [0;32m;[0m[2m[2m
+	
+	if (0 == 0) {
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the block
+
+	[2mif (new Date() == new Date()) {
+	}
+	
+	if (0 == 0)[0m[0m [0;32m;[0m[2m[2m
+	[0m[0m
+[35;2m[src/tests/object_eq.ts::003][0m[0m Lint [31m#[deny(correctness::non_strict_eq)][0m[0m triggered at [34m[14..17][0m[0m, [34m[43..46][0m[0m:
+[30;3mChecks for non-strict equality comparisons using `==` or `!=`.[0m[0m
+
+	[2mif (new Date()[0;31m ==[0m[2m new Date()) {
+	}
+	
+	if (0[0;31m ==[0m[2m 0) {
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`===`[0m[0m comparison instead
+
+	[2mif (new Date()[0m[0m [0;32m===[0m[2m[2m new Date()) {
+	}
+	
+	if (0 == 0) {
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`===`[0m[0m comparison instead
+
+	[2mif (new Date() == new Date()) {
+	}
+	
+	if (0[0m[0m [0;32m===[0m[2m[2m 0) {
+	}
+	[0m[0m
+[35m[src/tests/statement.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..14[0m[0m] [30mconst t = 0;[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..12[0m[0m] [30mconst t = 0;[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..12[0m[0m] [30mconst t = 0;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..11[0m[0m] [30mconst t = 0[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..11[0m[0m] [30mt = 0[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..11[0m[0m] [30mt = 0[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30mt[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m EqualsToken[[33m7..9[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m2[0m[0m NumericLiteral[[33m9..11[0m[0m] [30m0[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m11..12[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m12..14[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35m[src/tests/suspicious_cmp.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..113[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..111[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..23[0m[0m] [30mconst q = true > false;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..22[0m[0m] [30mconst q = true > false[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..22[0m[0m] [30mq = true > false[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..22[0m[0m] [30mq = true > false[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30mq[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m EqualsToken[[33m7..9[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m2[0m[0m BinaryExpression[[33m9..22[0m[0m] [30mtrue > false[0m[0m [2;31m[226][0m[0m
+              [30m0[0m[0m TrueKeyword[[33m9..14[0m[0m] [30mtrue[0m[0m [2;31m[112][0m[0m
+              [30m1[0m[0m GreaterThanToken[[33m14..16[0m[0m] [30m>[0m[0m [2;31m[32][0m[0m
+              [30m2[0m[0m FalseKeyword[[33m16..22[0m[0m] [30mfalse[0m[0m [2;31m[97][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m22..23[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+    [30m1[0m[0m ClassDeclaration[[33m23..89[0m[0m] [30m...[0m[0m [2;31m[263][0m[0m
+      [30m0[0m[0m ClassKeyword[[33m23..30[0m[0m] [30mclass[0m[0m [2;31m[86][0m[0m
+      [30m1[0m[0m Identifier[[33m30..32[0m[0m] [30mL[0m[0m [2;31m[80][0m[0m
+      [30m2[0m[0m OpenBraceToken[[33m32..34[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+      [30m3[0m[0m SyntaxList[[33m34..86[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+        [30m0[0m[0m GetAccessor[[33m34..86[0m[0m] [30m...[0m[0m [2;31m[177][0m[0m
+          [30m0[0m[0m GetKeyword[[33m34..41[0m[0m] [30mget[0m[0m [2;31m[139][0m[0m
+          [30m1[0m[0m ComputedPropertyName[[33m41..62[0m[0m] [30m[Symbol.toPrimitive][0m[0m [2;31m[167][0m[0m
+            [30m0[0m[0m OpenBracketToken[[33m41..43[0m[0m] [30m[[0m[0m [2;31m[23][0m[0m
+            [30m1[0m[0m PropertyAccessExpression[[33m43..61[0m[0m] [30mSymbol.toPrimitive[0m[0m [2;31m[211][0m[0m
+              [30m0[0m[0m Identifier[[33m43..49[0m[0m] [30mSymbol[0m[0m [2;31m[80][0m[0m
+              [30m1[0m[0m DotToken[[33m49..50[0m[0m] [30m.[0m[0m [2;31m[25][0m[0m
+              [30m2[0m[0m Identifier[[33m50..61[0m[0m] [30mtoPrimitive[0m[0m [2;31m[80][0m[0m
+            [30m2[0m[0m CloseBracketToken[[33m61..62[0m[0m] [30m][0m[0m [2;31m[24][0m[0m
+          [30m2[0m[0m OpenParenToken[[33m62..63[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+          [30m3[0m[0m SyntaxList[[33m63..63[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+          [30m4[0m[0m CloseParenToken[[33m63..64[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+          [30m5[0m[0m Block[[33m64..86[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+            [30m0[0m[0m OpenBraceToken[[33m64..66[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+            [30m1[0m[0m SyntaxList[[33m66..81[0m[0m] [30mreturn 1;[0m[0m [2;31m[358][0m[0m
+              [30m0[0m[0m ReturnStatement[[33m66..81[0m[0m] [30mreturn 1;[0m[0m [2;31m[253][0m[0m
+                [30m0[0m[0m ReturnKeyword[[33m66..78[0m[0m] [30mreturn[0m[0m [2;31m[107][0m[0m
+                [30m1[0m[0m NumericLiteral[[33m78..80[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+                [30m2[0m[0m SemicolonToken[[33m80..81[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+            [30m2[0m[0m CloseBraceToken[[33m81..86[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+      [30m4[0m[0m CloseBraceToken[[33m86..89[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+    [30m2[0m[0m ExpressionStatement[[33m89..111[0m[0m] [30mnew L() > new L();[0m[0m [2;31m[244][0m[0m
+      [30m0[0m[0m BinaryExpression[[33m89..110[0m[0m] [30mnew L() > new L()[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NewExpression[[33m89..100[0m[0m] [30mnew L()[0m[0m [2;31m[214][0m[0m
+          [30m0[0m[0m NewKeyword[[33m89..96[0m[0m] [30mnew[0m[0m [2;31m[105][0m[0m
+          [30m1[0m[0m Identifier[[33m96..98[0m[0m] [30mL[0m[0m [2;31m[80][0m[0m
+          [30m2[0m[0m OpenParenToken[[33m98..99[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+          [30m3[0m[0m SyntaxList[[33m99..99[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+          [30m4[0m[0m CloseParenToken[[33m99..100[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+        [30m1[0m[0m GreaterThanToken[[33m100..102[0m[0m] [30m>[0m[0m [2;31m[32][0m[0m
+        [30m2[0m[0m NewExpression[[33m102..110[0m[0m] [30mnew L()[0m[0m [2;31m[214][0m[0m
+          [30m0[0m[0m NewKeyword[[33m102..106[0m[0m] [30mnew[0m[0m [2;31m[105][0m[0m
+          [30m1[0m[0m Identifier[[33m106..108[0m[0m] [30mL[0m[0m [2;31m[80][0m[0m
+          [30m2[0m[0m OpenParenToken[[33m108..109[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+          [30m3[0m[0m SyntaxList[[33m109..109[0m[0m] [30m[0m[0m [2;31m[358][0m[0m
+          [30m4[0m[0m CloseParenToken[[33m109..110[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m110..111[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m111..113[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/suspicious_cmp.ts::001][0m[0m Lint [33m#[warn(suspicious::suspicious_cmp)][0m[0m triggered at [34m[9..22][0m[0m:
+[30;3mChecks for comparisons between non-number values.[0m[0m
+
+	[2mconst q =[0;31m true > false[0m[2m;
+	class L {
+	  get [Symbol.toPrimitive]() {
+	    return 1;
+	  }
+	}[0;33m
+	
+	new L() > new L()[0m[2m;
+	[0m[0m
+[35m[src/tests/useless_null_assert.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..35[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..33[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m VariableStatement[[33m0..27[0m[0m] [30mconst a: number | null = 0;[0m[0m [2;31m[243][0m[0m
+      [30m0[0m[0m VariableDeclarationList[[33m0..26[0m[0m] [30mconst a: number | null = 0[0m[0m [2;31m[261][0m[0m
+        [30m0[0m[0m ConstKeyword[[33m0..5[0m[0m] [30mconst[0m[0m [2;31m[87][0m[0m
+        [30m1[0m[0m SyntaxList[[33m5..26[0m[0m] [30ma: number | null = 0[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m VariableDeclaration[[33m5..26[0m[0m] [30ma: number | null = 0[0m[0m [2;31m[260][0m[0m
+            [30m0[0m[0m Identifier[[33m5..7[0m[0m] [30ma[0m[0m [2;31m[80][0m[0m
+            [30m1[0m[0m ColonToken[[33m7..8[0m[0m] [30m:[0m[0m [2;31m[59][0m[0m
+            [30m2[0m[0m UnionType[[33m8..22[0m[0m] [30mnumber | null[0m[0m [2;31m[192][0m[0m
+              [30m0[0m[0m SyntaxList[[33m8..22[0m[0m] [30mnumber | null[0m[0m [2;31m[358][0m[0m
+                [30m0[0m[0m NumberKeyword[[33m8..15[0m[0m] [30mnumber[0m[0m [2;31m[150][0m[0m
+                [30m1[0m[0m BarToken[[33m15..17[0m[0m] [30m|[0m[0m [2;31m[52][0m[0m
+                [30m2[0m[0m LiteralType[[33m17..22[0m[0m] [30mnull[0m[0m [2;31m[201][0m[0m
+                  [30m0[0m[0m NullKeyword[[33m17..22[0m[0m] [30mnull[0m[0m [2;31m[106][0m[0m
+            [30m3[0m[0m EqualsToken[[33m22..24[0m[0m] [30m=[0m[0m [2;31m[64][0m[0m
+            [30m4[0m[0m NumericLiteral[[33m24..26[0m[0m] [30m0[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m26..27[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+    [30m1[0m[0m ExpressionStatement[[33m27..33[0m[0m] [30ma!!;[0m[0m [2;31m[244][0m[0m
+      [30m0[0m[0m NonNullExpression[[33m27..32[0m[0m] [30ma!![0m[0m [2;31m[235][0m[0m
+        [30m0[0m[0m NonNullExpression[[33m27..31[0m[0m] [30ma![0m[0m [2;31m[235][0m[0m
+          [30m0[0m[0m Identifier[[33m27..30[0m[0m] [30ma[0m[0m [2;31m[80][0m[0m
+          [30m1[0m[0m ExclamationToken[[33m30..31[0m[0m] [30m![0m[0m [2;31m[54][0m[0m
+        [30m1[0m[0m ExclamationToken[[33m31..32[0m[0m] [30m![0m[0m [2;31m[54][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m32..33[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m33..35[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/useless_null_assert.ts::001][0m[0m Lint [33m#[warn(complexity::useless_null_assert)][0m[0m triggered at [34m[27..32][0m[0m:
+[30;3mChecks for more than one null assertion in a row.[0m[0m
+
+	[2mconst a: number | null = 0;[0;31m
+	a!![0m[2m;
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the extra assertion
+
+	[2mconst a: number | null = 0;[0m[0m [0;32ma![0m[2m[2m;
+	[0m[0m
+[35m[src/tests/useless_statement.ts][0m[0m
+[30m0[0m[0m SourceFile[[33m0..28[0m[0m] [30m...[0m[0m [2;31m[312][0m[0m
+  [30m0[0m[0m SyntaxList[[33m0..26[0m[0m] [30m...[0m[0m [2;31m[358][0m[0m
+    [30m0[0m[0m ExpressionStatement[[33m0..2[0m[0m] [30m2;[0m[0m [2;31m[244][0m[0m
+      [30m0[0m[0m NumericLiteral[[33m0..1[0m[0m] [30m2[0m[0m [2;31m[9][0m[0m
+      [30m1[0m[0m SemicolonToken[[33m1..2[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+    [30m1[0m[0m IfStatement[[33m2..26[0m[0m] [30m...[0m[0m [2;31m[245][0m[0m
+      [30m0[0m[0m IfKeyword[[33m2..6[0m[0m] [30mif[0m[0m [2;31m[101][0m[0m
+      [30m1[0m[0m OpenParenToken[[33m6..8[0m[0m] [30m([0m[0m [2;31m[21][0m[0m
+      [30m2[0m[0m BinaryExpression[[33m8..14[0m[0m] [30m1 == 1[0m[0m [2;31m[226][0m[0m
+        [30m0[0m[0m NumericLiteral[[33m8..9[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+        [30m1[0m[0m EqualsEqualsToken[[33m9..12[0m[0m] [30m==[0m[0m [2;31m[35][0m[0m
+        [30m2[0m[0m NumericLiteral[[33m12..14[0m[0m] [30m1[0m[0m [2;31m[9][0m[0m
+      [30m3[0m[0m CloseParenToken[[33m14..15[0m[0m] [30m)[0m[0m [2;31m[22][0m[0m
+      [30m4[0m[0m Block[[33m15..26[0m[0m] [30m...[0m[0m [2;31m[241][0m[0m
+        [30m0[0m[0m OpenBraceToken[[33m15..17[0m[0m] [30m{[0m[0m [2;31m[19][0m[0m
+        [30m1[0m[0m SyntaxList[[33m17..23[0m[0m] [30m2;[0m[0m [2;31m[358][0m[0m
+          [30m0[0m[0m ExpressionStatement[[33m17..23[0m[0m] [30m2;[0m[0m [2;31m[244][0m[0m
+            [30m0[0m[0m NumericLiteral[[33m17..22[0m[0m] [30m2[0m[0m [2;31m[9][0m[0m
+            [30m1[0m[0m SemicolonToken[[33m22..23[0m[0m] [30m;[0m[0m [2;31m[27][0m[0m
+        [30m2[0m[0m CloseBraceToken[[33m23..26[0m[0m] [30m}[0m[0m [2;31m[20][0m[0m
+  [30m1[0m[0m EndOfFileToken[[33m26..28[0m[0m] [30m[0m[0m [2;31m[1][0m[0m
+
+[35;2m[src/tests/useless_statement.ts::001][0m[0m Lint [33m#[warn(complexity::useless_statement)][0m[0m triggered at [34m[0..2][0m[0m, [34m[17..23][0m[0m:
+[30;3mChecks for statements with no effects.[0m[0m
+
+	[2m[0;31m2;[0m[2m
+	if (1 == 1) {[0;31m
+	  2;[0m[2m
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the expression
+
+	[2m[0m[0m [0;31;3m2;[0m[2m[0;32m[0m[2m[2m
+	if (1 == 1) {
+	  2;
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m remove the expression
+
+	[2m2;
+	if (1 == 1) {[0m[0m [0;31;3m2;[0m[2m[0;32m[0m[2m[2m
+	}
+	[0m[0m
+[35;2m[src/tests/useless_statement.ts::002][0m[0m Lint [31m#[deny(correctness::non_strict_eq)][0m[0m triggered at [34m[9..12][0m[0m:
+[30;3mChecks for non-strict equality comparisons using `==` or `!=`.[0m[0m
+
+	[2m2;
+	if (1[0;31m ==[0m[2m 1) {
+	  2;
+	}
+	[0m[0m
+= [1;33mhelp:[0m[0m use the [34m`===`[0m[0m comparison instead
+
+	[2m2;
+	if (1[0m[0m [0;32m===[0m[2m[2m 1) {
+	  2;
+	}
+	[0m[0m

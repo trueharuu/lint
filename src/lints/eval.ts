@@ -1,3 +1,4 @@
+import { Node } from 'byots';
 import { Category, Level, Lint, Meta } from '../lint';
 
 export class Eval extends Lint {
@@ -18,6 +19,17 @@ export class Eval extends Lint {
           this.report(t);
         }
       }
+    }
+  }
+
+  public fixes(t: Node) {
+    if (
+      this.ts.isCallExpression(t) &&
+      t.arguments.length === 1 &&
+      t.arguments[0] !== undefined &&
+      this.ts.isStringLiteral(t.arguments[0])
+    ) {
+      this.fix('use the passed expression instead', t.arguments[0].text);
     }
   }
 }

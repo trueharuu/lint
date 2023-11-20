@@ -1,5 +1,6 @@
 import { Node } from 'byots';
 import { Category, Level, Lint, Meta } from '../lint';
+import { color } from '../tools';
 
 export class BoxedTypes extends Lint {
   public meta: Meta = {
@@ -29,12 +30,18 @@ export class BoxedTypes extends Lint {
     }
   }
 
-  public fix(t: Node): Node | null {
-    if (this.ts.isTypeReferenceNode(t)) {
-      const name = t.typeName.getText(this.ast);
+  public fixes(_: Node) {
+    if (this.ts.isTypeReferenceNode(_)) {
+      const name = _.typeName.getText(this.ast);
 
-      return this.ts.factory.createTypeReferenceNode(name.toLowerCase());
+      this.fix(
+        `use the primitive type ${color(
+          `\`${_.typeName.getText(this.ast).toLowerCase()}\``,
+          34,
+        )} instead`,
+        this.ts.factory.createTypeReferenceNode(name.toLowerCase()),
+      );
     }
-    return null;
+    return [];
   }
 }

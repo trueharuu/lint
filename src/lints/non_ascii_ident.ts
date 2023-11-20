@@ -1,4 +1,6 @@
+import { Node } from 'byots';
 import { Category, Level, Lint, Meta } from '../lint';
+import { color } from '../tools';
 
 export class NonAsciiIdent extends Lint {
   public meta: Meta = {
@@ -23,6 +25,24 @@ export class NonAsciiIdent extends Lint {
           this.skip(child.name);
         }
       }
+    }
+  }
+
+  public fixes(_: Node) {
+    if (this.ts.isBindingName(_)) {
+      const i = _.getText(this.ast).replace(
+        /[^\x00-\x7F]/g,
+        (x) => '\\u' + x.codePointAt(0)!.toString(16).padStart(4, '0'),
+      );
+      this.fix(
+        `use it's escaped variant ${color(`\`${i}\``, 34)} instead`,
+        this.ts.factory.createIdentifier(
+          _.getText(this.ast).replace(
+            /[^\x00-\x7F]/g,
+            (x) => '\\u' + x.codePointAt(0)!.toString(16).padStart(4, '0'),
+          ),
+        ),
+      );
     }
   }
 }

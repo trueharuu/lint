@@ -1,5 +1,4 @@
 import { Category, Level, Lint, Meta } from '../lint';
-import { is_type_flag_set } from '../tools';
 
 export class NonBoolCondition extends Lint {
   public meta: Meta = {
@@ -14,7 +13,7 @@ export class NonBoolCondition extends Lint {
       if (this.ts.isIfStatement(t)) {
         const ty = this.typeck().getTypeAtLocation(t.expression);
 
-        if (!is_type_flag_set(ty, this.ts.TypeFlags.BooleanLike)) {
+        if (!this.has_ty_flag(ty, this.ts.TypeFlags.BooleanLike)) {
           this.report(t.expression);
         } else {
           this.skip(t.expression);

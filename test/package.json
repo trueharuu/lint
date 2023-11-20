@@ -1,0 +1,17 @@
+{
+  "name": "lintr",
+  "version": "1.0.0",
+  "description": "ts linter",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@eslint-community/regexpp": "^4.5.1",
+    "@typescript-eslint/rule-tester": "^6.11.0",
+    "@typescript-eslint/scope-manager": "6.11.0",
+    "@typescript-eslint/type-utils": "6.11.0",
+    "@typescript-eslint/utils": "6.11.0",
+    "@typescript-eslint/visitor-keys": "6.11.0",
+    "ts-api-utils": "^1.0.1",
+    "vitest": "^0.34.6"
+  }
+}

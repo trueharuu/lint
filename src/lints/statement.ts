@@ -8,9 +8,5 @@ export class Statement extends Lint {
     description: 'Checks for statements.',
   };
 
-  public check() {
-    for (const statement of this.ast.statements) {
-      //   this.report(statement);
-    }
-  }
+  public check() {}
 }

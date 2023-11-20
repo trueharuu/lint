@@ -19,10 +19,9 @@ export class UselessNullAssert extends Lint {
     }
   }
 
-  public fix(t: Node): Node | null {
+  public fixes(t: Node) {
     if (this.ts.isNonNullExpression(t)) {
-      return t.expression;
+      this.fix('remove the extra assertion', t.expression);
     }
-    return null;
   }
 }
